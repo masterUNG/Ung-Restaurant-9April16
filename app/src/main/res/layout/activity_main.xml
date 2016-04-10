@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="appewtc.masterung.ungrestautant.MainActivity">
+    tools:context="appewtc.masterung.ungrestautant.MainActivity"
+    android:background="@drawable/bg13">
 
     <LinearLayout
         android:orientation="vertical"
@@ -15,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
-        android:padding="50dp">
+        android:padding="50dp"
+        android:background="#96ffffff">
 
         <ImageView
             android:layout_width="150dp"
@@ -45,4 +47,12 @@
             android:hint="Password :"
             android:inputType="textPassword" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:onClick="clickLogin" />
 </RelativeLayout>
