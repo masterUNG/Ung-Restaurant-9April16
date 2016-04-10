@@ -1,5 +1,7 @@
 package appewtc.masterung.ungrestautant;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -99,12 +101,49 @@ public class ServiceActivity extends AppCompatActivity {
                         foodStrings, priceStrings, iconStrings);
                 listView.setAdapter(myAdapter);
 
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        chooseAmount(foodStrings[i]);
+
+                    }   // onItemClick
+                });
+
             } catch (Exception e) {
                 Log.d("10April", "Error strJSON ===>>> " + e.toString());
             }
 
         }   // onPost
     }   // MyConnectedFood Class
+
+    private void chooseAmount(String choosefoodString) {
+
+        foodString = choosefoodString;
+        CharSequence[] charSequence = {"1 จาน", "2 จาน", "3 จาน", "4 จาน", "5 จาน"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.icon_myaccount);
+        builder.setTitle(foodString);
+        builder.setSingleChoiceItems(charSequence, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                amountString = Integer.toString(i + 1);
+                dialogInterface.dismiss();
+
+                updateToServer();
+
+            }   // onClick
+        });
+        builder.show();
+
+    }   // chooseAmount
+
+    private void updateToServer() {
+
+
+
+    }   // updateToServer
 
 
     private void createSpinner() {
