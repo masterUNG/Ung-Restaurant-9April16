@@ -1,5 +1,6 @@
 package appewtc.masterung.ungrestautant;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -88,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
                 //Password True
                 Toast.makeText(this, "ยินดีต้อนรับ " + resultStrings[3],
                         Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
+                intent.putExtra("Officer", resultStrings[3]);
+                startActivity(intent);
+                finish();
 
             } else {
                 //Password False

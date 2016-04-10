@@ -31,21 +31,26 @@
             android:text="@string/app_name"
             android:id="@+id/textView"
             android:textSize="35sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/text" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
             android:hint="User :"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText2"
             android:hint="Password :"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text" />
     </LinearLayout>
 
     <Button
